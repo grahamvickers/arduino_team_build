@@ -34,7 +34,7 @@ Now in the browser of your choice go to: localhost:3000
 
 * HTML5 - Layout
 * CSS3 - Styling
-* JaveScript - Functions
+* JavaScript - Functions
 * [Sass](https://sass-lang.com/) - CSS compiler
 
 
@@ -49,7 +49,7 @@ Now in the browser of your choice go to: localhost:3000
 ## Authors
 
 * **Graham Vickers** - *Design & Development* - [Fanshawe College](https://github.com/grahamvickers)
-* **Zacherie Pereira** - *Design & Development* - [Fanshawe College](https://github.com/zpereiracollege)
+* **Zacharie Pereira** - *Design & Development* - [Fanshawe College](https://github.com/zpereiracollege)
 * **Arafat Ahmad** - *Developer* - [Fanshawe College](https://github.com/zpereiracollege)
  
 
