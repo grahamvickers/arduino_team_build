@@ -1,4 +1,4 @@
-![](/images/logo_v1.svg)
+![](/Front-End/images/logo_text.svg)
 
 This is our Guarduino website called Flora.io, this is in conjunction with our Interactive Media Specialist program at Fanshawe College. 
 
