@@ -32,7 +32,7 @@ img, embed, object, video {
 
 body{
 	font-family: 'Roboto', sans-serif;
-	background-image: url(../images/background1.jpg);
+	background-image: url(../images/background3.jpg);
 }
 
 .container {
@@ -59,7 +59,7 @@ body{
 	display: flex;
 	align-items: center;
 	text-align: center;
-  	background-color: rgba(16, 165, 108, 0.425);
+  	background-color: rgba(44, 91, 97, 0.800);
 	width: 450px;
 	padding-left: 50px;
 	font-family: 'Roboto', sans-serif;
@@ -72,14 +72,21 @@ form {
 .userIcon {
 	width: 100px;
 }
-
-form h2 {
-	font-size: 2.9rem;
+form h1 {
+	font-size: 50px;
 	font-weight: bold;
 	text-transform: uppercase;
-	margin: 15px 0;
+	text-align: center;
+	color:rgb(91, 166, 95);
+	font-family: 'Roboto', sans-serif;
+}
+
+form h2 {
+	font-size: 50px;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-align: center;
 	color: black;
-	/* color: #247065; */
 	font-family: 'Roboto', sans-serif;
 }
 
@@ -87,18 +94,8 @@ form h4 {
 	font-size: 1rem;
 	font-weight: bold;
 	text-transform: uppercase;
-	margin: 15px 0;
 	color: black;
-	/* color: #247065; */
 	font-family: 'Roboto', sans-serif;
-}
-
-#userName {
-	background: url(../images/user.png) no-repeat;
-}
-
-#passWord {
-	background: url(../images/lock.png) no-repeat;
 }
 
 .div-input {
@@ -128,8 +125,8 @@ form h4 {
 }
 
 ::placeholder {
-	color: rgb(37, 37, 37);
-	padding-left: 60px;
+	color: black;
+	padding-left: 100px;
 }
 
 .i {
@@ -172,7 +169,7 @@ a{
 }
 
 a:hover{
-	color: #1f322b;
+	color: rgb(96, 166, 95);
 }
 
 .button{
