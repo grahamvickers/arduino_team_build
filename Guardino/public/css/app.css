@@ -11446,3 +11446,206 @@ a.text-dark:focus {
   }
 }
 
+#infoCon h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 70px;
+  letter-spacing: 3px;
+  color: #2B3D54;
+  margin-top: 20px;
+}
+
+#infoCon p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 16px;
+  color: #3f3f3f;
+  letter-spacing: .5px;
+  line-height: 20px;
+  margin-top: 20px;
+}
+
+#infoCon {
+  padding: 20px 40px 20px 40px;
+}
+
+#benefits {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+#benefits h2 {
+  padding-bottom: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 50px;
+  letter-spacing: 3px;
+  color: #2B3D54;
+  margin-top: 20px;
+}
+
+#benefitsCon {
+  padding-bottom: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.benefit p {
+  padding-top: 30px;
+}
+
+.benefit {
+  width: 30%;
+}
+.benefit img {
+  width: 80%;
+}
+
+#signupForm {
+display: -webkit-box;
+display: -ms-flexbox;
+display: flex;
+-webkit-box-orient: vertical;
+-webkit-box-direction: normal;
+    -ms-flex-direction: column;
+        flex-direction: column;
+padding: 20px 40px 20px 40px;
+}
+
+#footerSignUpContainer {
+padding: 20px 0px 20px 0px;
+background-color: #60A65F;
+}
+
+#footerContainer {
+background-color: #2B3D54;
+height: 61px;
+margin: 0 auto;
+padding: 0;
+padding-top: 40px;
+}
+
+#iconArrow {
+width: 22px;
+float: left;
+margin-left: 86px;
+margin-right: 13px;
+}
+
+#footerContainer p {
+padding: 0;
+margin: 0 auto;
+font-family: Arial, Helvetica, sans-serif;
+font-weight: 400;
+font-style: normal;
+font-size: 16px;
+color: white;
+}
+
+#footerSignUpContainer p {
+margin-top: 23px;
+font-family: Arial, Helvetica, sans-serif;
+font-weight: 400;
+font-style: normal;
+font-size: 16px;
+color: white;
+margin-left: 40px;
+margin-right: 40px;
+}
+
+#footerSignUpContainer h2 {
+margin-left: 40px;
+margin-right: 40px;
+font-family: Arial, Helvetica, sans-serif;
+font-weight: 700;
+font-style: normal;
+color: #2B3D54;
+}
+
+.buttonSignUp {
+border-radius: 5px;
+border: 2px solid #2B3D54;
+background: #2B3D54;
+width: 200px;
+font-family: Arial, Helvetica, sans-serif;
+font-weight: 400;
+font-style: normal;
+font-size: 16px;
+color: white;
+font-weight: 500;
+letter-spacing: 1px;
+margin: 0 auto;
+display: block;
+margin-top: 20px;
+margin-bottom: 20px;
+padding: 10px;
+-webkit-transition: .2 ease-in-out;
+transition: .2 ease-in-out;
+}
+
+.buttonSignUp:hover {
+background: #60A65F;
+border: 3px solid #2B3D54;
+color: #2B3D54;
+}
+
+#footerSignUpContainer a {
+text-decoration: none;
+text-align: center;
+}
+
+#footerCon {
+background: #2B3D54;
+padding: 20px 40px 20px 40px;
+}
+
+#socialIcons {
+display: -webkit-box;
+display: -ms-flexbox;
+display: flex;
+-webkit-box-orient: horizontal;
+-webkit-box-direction: normal;
+    -ms-flex-direction: row;
+        flex-direction: row;
+-webkit-box-pack: center;
+    -ms-flex-pack: center;
+        justify-content: center;
+}
+
+#socialIcons img {
+width: 50px;
+}
+
+#downloadCon {
+  padding: 20px 40px 40px 40px;
+}
+
+#storeIcons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-top: 30px;
+}
+
+#storeIcons img {
+  height: 70px;
+}
+
+
