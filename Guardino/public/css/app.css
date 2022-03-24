@@ -11749,6 +11749,12 @@ width: 50px;
   font-weight: 300;
 }
 
+.login_logo{
+  padding-top: 100px;
+  width: 100%;
+  height: 100%;
+}
+
 .login-box-msg,
 .register-box-msg {
   margin: 0;
@@ -11762,6 +11768,11 @@ width: 50px;
   padding: 20px;
   border-top: 0;
   color: #666;
+}
+
+.login-body{
+  padding-left: 20px;
+  text-align: center;
 }
 
 .has-feedback {
@@ -11873,13 +11884,13 @@ input {
   width: 70%;
   padding-left: 10%;
   padding-top: 10%;
-  height: 92vh;
+  height: 100vh;
 }
 
-.form-flex a {
+/* .form-flex a {
   text-decoration: none !important;
   color: white !important;
-}
+} */
 
 ::placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -11894,26 +11905,45 @@ input {
 }
 
 .login-btn {
-  margin-left: -5%;
-  border-radius: 25px;
-  width: 129%;
-  margin-top: 20px;
-  background: black;
-  color: white;
-  text-transform: uppercase;
-  padding: 11px;
+  display: block;
+	width: 100%;
+	height: 50px;
+	border-radius: 20px;
+	outline: none;
+	border: none;
+	background-image: linear-gradient(to right, #247065, #1f322b, #247065);
+	background-size: 200%;
+	font-size: 1.2rem;
+	color: #fff;
+	font-family: Arial, Helvetica, sans-serif;
+	text-transform: uppercase;
+	margin: 1rem 0;
+	cursor: pointer;
+	transition: .5s;
+  opacity: none;
 }
 
 .btn:hover {
-  color: green;
+  background-position: center;
+  color: #fff;
 }
 
 .login-header-small {
   color: black;
   text-transform: uppercase;
-  font-size: small;
+  font-size: 15px;
   margin-left: 17px;
   margin-top: 10px;
   font-weight: bold;
+}
+
+#loginBody{
+  background-image: url(../images/background3.jpg);
+  background-repeat: no-repeat;
+}
+
+#registerBody{
+  background-image: url(../images/background3.jpg);
+  background-repeat: no-repeat;
 }
 
