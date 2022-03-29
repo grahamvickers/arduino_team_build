@@ -11880,7 +11880,7 @@ input {
 
 .form-flex {
   background-color: #27595d;
-  opacity: 0.8;
+  opacity: 0.9;
   width: 70%;
   padding-left: 10%;
   padding-top: 10%;
@@ -11904,24 +11904,27 @@ input {
   text-align: center;
 }
 
-.login-btn {
+/* .login-btn {
   display: block;
 	width: 100%;
 	height: 50px;
+  padding-right: 10px;
 	border-radius: 20px;
+  justify-content: center;
 	outline: none;
 	border: none;
 	background-image: linear-gradient(to right, #247065, #1f322b, #247065);
 	background-size: 200%;
 	font-size: 1.2rem;
 	color: #fff;
+  text-align: center;
 	font-family: Arial, Helvetica, sans-serif;
 	text-transform: uppercase;
 	margin: 1rem 0;
 	cursor: pointer;
 	transition: .5s;
   opacity: none;
-}
+} */
 
 .btn:hover {
   background-position: center;
