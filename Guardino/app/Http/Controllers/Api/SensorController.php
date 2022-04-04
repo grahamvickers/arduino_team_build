@@ -23,14 +23,44 @@ class SensorController extends Controller
             'light' => 'required|numeric|between:0,100'
         ]);
 
+        $today = now();
 
-        Sensor::create([
-            'gas' => $req->gas,
-            'moisture' => $req->moisture,
-            'temperature' => $req->temperature,
-            'light' => $req->light
-        ]);
+        $sensorAll = Sensor::All();
+
+        $sensorNum = count($sensorAll);
+
+        if ($sensorNum == 0) {
+            Sensor::create([
+                'gas' => $req->gas,
+                'moisture' => $req->moisture,
+                'temperature' => $req->temperature,
+                'light' => $req->light
+            ]);
+        } else {
+            $sensor = Sensor::orderBy('created_at',  'DESC')
+            ->get()
+            ->first();
+
+            $sensorDate = date_create($sensor->created_at);
+
+    
+            $result = date_diff($today, $sensorDate);
+
+            if ($result->d >= 1) {
+                Sensor::create([
+                    'gas' => $req->gas,
+                    'moisture' => $req->moisture,
+                    'temperature' => $req->temperature,
+                    'light' => $req->light
+                ]);
+            } else {
+                
+            }
+        }
+       
         
+
+
         
     }
 }
