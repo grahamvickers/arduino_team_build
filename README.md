@@ -27,13 +27,30 @@ Then run the command by pressing enter/return
 ## Deployment
 
 
-
-Now in the browser of your choice go to: localhost:3000
+Now in the terminal again, run the following command 
+```
+$ cd arduino_team_build
+```
+now, this command
+```
+$ cd Guardino
+```
+now, this command to populate the database
+```
+$ docker-compose run artisan migrate
+```
+now the run final command below to deploy the application
+```
+$ docker-compose up
+```
 
 ## Built With
 
 * HTML5 - Layout
 * CSS3 - Styling
+* Laravel - Php framework
+* Vue.js - Front-end
+* PHPmyAdmin - Database
 * JavaScript - Functions
 * [Sass](https://sass-lang.com/) - CSS compiler
 
@@ -48,9 +65,9 @@ Now in the browser of your choice go to: localhost:3000
 
 ## Authors
 
-* **Graham Vickers** - *Design & Development* - [Fanshawe College](https://github.com/grahamvickers)
-* **Zacharie Pereira** - *Design & Development* - [Fanshawe College](https://github.com/zpereiracollege)
-* **Arafat Ahmad** - *Developer* - [Fanshawe College](https://github.com/zpereiracollege)
+* **Graham Vickers** - *Project Manager & Full-Stack Developer* - [Fanshawe College](https://github.com/grahamvickers)
+* **Zacharie Pereira** - *Lead Back-End Developer* - [Fanshawe College](https://github.com/zpereiracollege)
+* **Arafat Ahmad** - *Front-End Developer* - [Fanshawe College](https://github.com/zpereiracollege)
  
 
 
