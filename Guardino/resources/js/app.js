@@ -9,8 +9,12 @@ Vue.use(Vuex);
 
 const store = new Vuex.Store({
     state: {
+        sensors: null,
     },
     mutations: {
+        sensors (state, arrS) {
+            state.sensors = arrS;
+        }
     },
     getters: {
     },
