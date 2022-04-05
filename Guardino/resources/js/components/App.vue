@@ -12,7 +12,16 @@
 
 <script>
     export default {
-        name: 'app'
+        name: 'app',
+        props: {
+            sensors: {
+                type: Array
+            }
+        },
+
+        mounted() {
+            this.$store.commit('sensors', this.sensors);
+        }
     }
 </script>
 
