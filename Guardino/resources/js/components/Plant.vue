@@ -62,8 +62,11 @@
                 options: {}
             };
 
-  
-            firebase.initializeApp(config);
+            if (firebase.apps.length == 0) {
+                firebase.initializeApp(config);
+            } else {
+
+            }
   
 
 	        let fireSensor = firebase.database().ref('sensors');
