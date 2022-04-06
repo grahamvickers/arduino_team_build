@@ -14,6 +14,9 @@
     <!-- Fonts -->
     <link rel="stylesheet" href="https://use.typekit.net/voy6oqb.css">
 
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset ('images/favicon-32x32.png') }}">
+    
     <!-- Styles -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">

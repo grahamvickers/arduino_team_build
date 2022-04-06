@@ -26,17 +26,7 @@
                 thePlantData: [],
             }
         },
-        created: function() {
-            let vm = this;
-            fetch(`http://localhost:8082/api/get-recipes`) 
-            .then(function(response){
-            return response.json();
-            }).then(function(data){
-                console.log(data)
-                vm.thePlantData = data;
-            })
-        }
-
+        
     }
 </script>
 

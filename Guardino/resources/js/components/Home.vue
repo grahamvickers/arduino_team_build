@@ -3,7 +3,7 @@
         
         <section>
             <h2>Welcome back!</h2>
-            <p>Your plants are all healthy, you’re doing a great job!</p>
+            <p>Your plants are all healthy, you're doing a great job!</p>
 
         </section>
 
@@ -18,13 +18,18 @@
 
         <section>
             <h2>Weather</h2>
+            <WeatherApi></WeatherApi>
         </section>
     </div>
 </template>
 
 <script>
-    export default {
+    import WeatherApi from './partials/Weather.vue';
 
+    export default {
+        components: {
+            'WeatherApi': WeatherApi
+        }
     }
 </script>
 

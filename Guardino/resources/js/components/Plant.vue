@@ -57,13 +57,16 @@
                 projectId: "pi-hms",
                 storageBucket: "pi-hms.appspot.com",
                 messagingSenderId: "737726017750",
-                type: 'polarArea',
-                data: data,
-                options: {}
+                // type: 'polarArea',
+                // data: data,
+                // options: {}
             };
 
-  
-            firebase.initializeApp(config);
+            if (firebase.apps.length == 0) {
+                firebase.initializeApp(config);
+            }
+
+            // firebase.initializeApp(config);
   
 
 	        let fireSensor = firebase.database().ref('sensors');
@@ -79,29 +82,29 @@
                 vm.postVal();
             }, 1000);       
             
-            const myChart = new Chart(
-                document.getElementById('myChart'),
-                config
-            );
+            // const myChart = new Chart(
+            //     document.getElementById('myChart'),
+            //     config
+            // );
 
-            const data = {
-            labels: [
-                'gas',
-                'temperature',
-                'moisture',
-                
-            ],
-            datasets: [{
-                label: 'Live Sensor Data',
-                data: [11, 16, 7, 3, 14],
-                backgroundColor: [
-                'rgb(255, 99, 132)',
-                'rgb(75, 192, 192)',
-                'rgb(255, 205, 86)',
-                
-                ]
-            }]
-            };
+            // const data = {
+            //     labels: [
+            //         'gas',
+            //         'temperature',
+            //         'moisture',
+                    
+            //     ],
+            //     datasets: [{
+            //         label: 'Live Sensor Data',
+            //         data: [11, 16, 7, 3, 14],
+            //         backgroundColor: [
+            //         'rgb(255, 99, 132)',
+            //         'rgb(75, 192, 192)',
+            //         'rgb(255, 205, 86)',
+                    
+            //         ]
+            //     }]
+            // };
         },
         methods: {
             postVal() {
