@@ -1930,10 +1930,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'app',
-  data: function data() {
-    return {
-      thePlantData: []
-    };
+  props: {
+    sensors: {
+      type: Array
+    }
+  },
+  mounted: function mounted() {
+    this.$store.commit('sensors', this.sensors);
   }
 });
 
@@ -2054,8 +2057,7 @@ __webpack_require__.r(__webpack_exports__);
 
     if (firebase.apps.length == 0) {
       firebase.initializeApp(config);
-    } // firebase.initializeApp(config);
-
+    }
 
     var fireSensor = firebase.database().ref('sensors');
     fireSensor.on('value', function (snap) {
@@ -2066,6 +2068,14 @@ __webpack_require__.r(__webpack_exports__);
     });
     setTimeout(function () {
       vm.postVal();
+    }, 1000);
+    setTimeout(function () {
+      vm.sensors.forEach(function (sensor) {
+        console.log(sensor.gas);
+        console.log(sensor.moisture);
+        console.log(sensor.temperature);
+        console.log(sensor.light);
+      });
     }, 1000); // const myChart = new Chart(
     //     document.getElementById('myChart'),
     //     config
@@ -2130,7 +2140,7 @@ __webpack_require__.r(__webpack_exports__);
     fetch("https://api.openweathermap.org/data/2.5/weather?q=Toronto&units=metric&appid=0cfd5254b9feba1008beb2600ba94f49").then(function (response) {
       return response.json();
     }).then(function (data) {
-      console.log(data);
+      // console.log(data)
       vm.weather = data;
     });
   },
@@ -55316,8 +55326,14 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__["default"]);
 var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
-  state: {},
-  mutations: {},
+  state: {
+    sensors: null
+  },
+  mutations: {
+    sensors: function sensors(state, arrS) {
+      state.sensors = arrS;
+    }
+  },
   getters: {},
   actions: {}
 });

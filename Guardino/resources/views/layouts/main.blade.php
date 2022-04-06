@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Flora.io') }}</title>
 
     <!-- Scripts -->
 
@@ -16,6 +16,7 @@
 
     <!-- Favicons -->
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset ('images/favicon-32x32.png') }}">
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
     
     <!-- Styles -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">

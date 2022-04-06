@@ -78,6 +78,15 @@
 
             setTimeout(() => {
                 vm.postVal();
+            }, 1000);
+
+            setTimeout(() => {
+                vm.sensors.forEach(sensor => {
+                    console.log(sensor.gas);
+                    console.log(sensor.moisture);
+                    console.log(sensor.temperature);
+                    console.log(sensor.light);
+                });  
             }, 1000);       
             
             // const myChart = new Chart(
