@@ -10971,7 +10971,7 @@ h2 {
   font-size: 38px;
   color: #2B3D54;
   margin-bottom: 20px;
-  letter-spacing: 1;
+  letter-spacing: 3 !important;
 }
 
 h3 {
@@ -11114,7 +11114,59 @@ section {
   height: 60px;
 }
 
+#authCon {
+  padding: 50px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#formCon {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.formInput {
+  margin-bottom: 20px;
+}
+
+.formInput input {
+  border: none;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  text-decoration: none;
+  width: 300px;
+  padding: 10px;
+}
+
+.formInput input:focus {
+  text-decoration: none;
+}
+
+.formInput input:focus,
+.formInput select:focus,
+.formInput textarea:focus,
+.formInput button:focus {
+  outline: none;
+}
+
+#formGroupOptions {
+  display: flex;
+  flex-direction: row;
+}
+
+#formGroupOptions a {
+  width: 200px;
+  color: #2B3D54;
+}
+
 @media screen and (min-width: 760px) {
+  h2 {
+    font-size: 42px;
+  }
+
   #benefitsCon {
     display: flex;
     flex-direction: row;
@@ -11123,14 +11175,36 @@ section {
 
   .benefit {
     flex-direction: column;
-    justify-content: space-between;
-    height: 400px;
+    width: 30%;
+  }
+
+  .benefit img {
+    margin-bottom: 50px;
+    justify-content: center;
+    width: auto;
+    height: 120px;
   }
 
   .benefit:nth-child(odd) {
     flex-direction: column;
     margin-right: 30px;
     margin-left: 30px;
+  }
+
+  #authCon {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+  }
+
+  #authCon div {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  h2 {
+    font-size: 52px;
   }
 }
 
