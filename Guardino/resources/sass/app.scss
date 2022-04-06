@@ -6,3 +6,184 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+.hidden{
+    display: none;
+}
+
+h2{
+    font-family: hwt-artz, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 38px;
+    color: $blue-flora;
+    margin-bottom: 20px;
+    letter-spacing: 1;
+}
+
+h3{
+    font-family: hwt-artz, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 28px;
+    color: $green-flora;
+    margin-bottom: 10px;
+
+}
+
+p{
+    font-family: objektiv-mk3, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: .5px;
+    margin-bottom: 20px;
+}
+
+a{  
+    font-family: objektiv-mk3, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: .5px;
+    text-decoration: none;
+    &:hover{
+        text-decoration: none;
+    }
+}
+
+#nav{
+    background-color: #f2f2f2 !important;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+section{
+    margin-bottom: 60px;
+}
+
+// all welcome page styles below
+
+// landing
+#mainWelcome{
+    padding: 40px 30px;
+}
+
+// flora benefits area
+.benefit{
+    img{
+        width: 150px;
+        margin: 30px;
+    }
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 40px;
+    &:nth-child(odd){
+        flex-direction: row-reverse;
+    }
+}
+
+// sign up area
+
+#signupCon{
+    background-color: $green-flora;
+    padding: 30px;
+    p{
+        color: #f2f2f2;
+    }
+    .signupBtn{
+        background: $blue-flora;
+        border: 2px solid #2B3D54;
+        // width: 150px;
+        padding: 10px 45px;
+        text-align: center;
+        border-radius: 5px;
+        transition: ease-in-out .2;
+        color: #f2f2f2;
+        &:hover{
+            background: none;
+            color: $blue-flora;
+            font-weight: 400;
+        }
+    }
+}
+// download area
+#downloadCon{
+    padding: 30px;
+}
+#storeIcons{
+    img{
+        height: 50px;
+        margin-right: 30px;
+        &:hover{
+            cursor: pointer;
+        }
+    }
+}
+
+// footer
+
+#footerCon{
+    background-color: $blue-flora;
+    padding: 30px;
+}
+
+#socialIcons{
+    display: flex;
+    justify-content: center;
+    a img{
+        height: 50px;
+        transition: ease-in-out .2s;
+        &:hover{
+            opacity: .8;
+        }
+    }
+}
+
+
+// all auth page styles 
+#authNav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    a{
+        color: $blue-flora;
+        line-height: 0;
+        font-size: 40px;
+        font-weight: 700;
+        background-color: $green-flora;
+        // padding: none;
+        // border-radius: 5px;
+        // height: 60px;
+        // // margin: 0px;
+        // width: 60px;
+        // text-align: center;
+    }
+    img{
+        height: 60px;
+    }
+}
+@media screen and (min-width: 760px) {
+    #benefitsCon{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .benefit{
+        flex-direction: column;
+        justify-content: space-between;
+        height: 400px;
+        
+        &:nth-child(odd){
+            flex-direction: column;
+            margin-right: 30px;
+            margin-left: 30px;
+        }
+    }
+}
