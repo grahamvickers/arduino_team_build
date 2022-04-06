@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
+use App\Sensor;
 
 class GuardinoController extends Controller
 {
@@ -23,6 +24,22 @@ class GuardinoController extends Controller
      */
     public function index()
     {
-        return view('guardino');
+        $sensors = Sensor::All();
+
+        return view('guardino', compact('sensors'));
     }
+
+    /**
+     * Returns all of the sensor data as json
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $req)
+    {
+
+        
+    }
+
+
 }
