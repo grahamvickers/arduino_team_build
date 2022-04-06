@@ -19,7 +19,7 @@ class SensorController extends Controller
         $req-> validate([
             'gas' => 'required|numeric|between:0,100',
             'moisture' => 'required|numeric|between:0,100',
-            'temperature' => 'required|numeric|between:0,100',
+            'temperature' => 'required|string|max:255',
             'light' => 'required|numeric|between:0,100'
         ]);
 
@@ -41,9 +41,8 @@ class SensorController extends Controller
             ->get()
             ->first();
 
-            $sensorDate = date_create($sensor->created_at);
+            $sensorDate = date_create($sensor->created_at, timezone_open("America/Toronto"));
 
-    
             $result = date_diff($today, $sensorDate);
 
             if ($result->d >= 1) {
