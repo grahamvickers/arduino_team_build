@@ -21,12 +21,16 @@
 <script>
     export default {
         name: 'app',
-        data() {
-            return {
-                thePlantData: [],
+        props: {
+            sensors: {
+                type: Array
             }
         },
-        
+
+        mounted() {
+            this.$store.commit('sensors', this.sensors);
+        }
+
     }
 </script>
 

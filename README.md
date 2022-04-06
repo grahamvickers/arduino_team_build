@@ -67,7 +67,7 @@ $ docker-compose up
 
 * **Graham Vickers** - *Project Manager & Full-Stack Developer* - [Fanshawe College](https://github.com/grahamvickers)
 * **Zacharie Pereira** - *Lead Back-End Developer* - [Fanshawe College](https://github.com/zpereiracollege)
-* **Arafat Ahmad** - *Front-End Developer* - [Fanshawe College](https://github.com/zpereiracollege)
+* **Arafat Ahmad** - *Assistant Front-End Developer* - [Fanshawe College](https://github.com/zpereiracollege)
  
 
 

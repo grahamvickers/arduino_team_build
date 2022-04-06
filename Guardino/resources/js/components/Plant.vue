@@ -65,8 +65,6 @@
             if (firebase.apps.length == 0) {
                 firebase.initializeApp(config);
             }
-
-            // firebase.initializeApp(config);
   
 
 	        let fireSensor = firebase.database().ref('sensors');
