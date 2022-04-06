@@ -1,9 +1,8 @@
-<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+<nav id="nav" class="navbar navbar-expand-md navbar-light ">
     <div class="container">
-        <a class="navbar-brand" href="{{ url('/') }}">
-            {{ config('app.name', 'FLORA.IO') }}
-            <img src="images/logo_v1.svg" alt="FLORA.IO Logo" class="hiddenNav" id="logo">
-        </a>
+            
+        <img src="images/main_logo_v1.svg" alt="FLORA.IO Logo"  id="logo" width="150px">
+       
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -33,6 +32,7 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">

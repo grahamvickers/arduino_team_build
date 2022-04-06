@@ -17,7 +17,7 @@ class CreateSensorsTable extends Migration
             $table->bigIncrements('id');
             $table->integer('gas');
             $table->integer('moisture');
-            $table->integer('temperature');
+            $table->string('temperature');
             $table->integer('light');
             $table->timestamps();
         });
