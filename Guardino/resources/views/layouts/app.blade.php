@@ -14,7 +14,8 @@
 	<script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset ('images/favicon-32x32.png') }}">
 
     <!-- Fonts -->
     <link rel="stylesheet" href="https://use.typekit.net/voy6oqb.css">

@@ -30,6 +30,7 @@
         mounted() {
             this.$store.commit('sensors', this.sensors);
         }
+
     }
 </script>
 
