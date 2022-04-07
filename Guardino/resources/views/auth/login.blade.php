@@ -11,11 +11,11 @@
     
 
     <section id="authCon">
-        <div>
+        <div class="authDiv">
             <h2>Welcome Back</h2>
             <h4>Log in to your account</h4>
         </div> 
-        <div>        
+        <div class="authDiv">        
             <form id="formCon" method="POST" action="{{ route('login') }}">
                 @csrf
                 <div class="formGroup">
@@ -56,7 +56,7 @@
                 </div>
                 
                 <div>
-                    <button type="submit" class="btn btn-primary">
+                    <button type="submit" class="authBtn">
                         {{ __('Login') }}
                     </button>
                 </div>

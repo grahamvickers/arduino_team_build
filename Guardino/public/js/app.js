@@ -2045,9 +2045,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2118,7 +2115,7 @@ __webpack_require__.r(__webpack_exports__);
         },
         options: {
           // responsive: false,
-          cutout: 90
+          cutout: 70
         }
       });
       new Chart("lightChart", {
@@ -2132,7 +2129,7 @@ __webpack_require__.r(__webpack_exports__);
         },
         options: {
           // responsive: false,
-          cutout: 90
+          cutout: 70
         }
       });
       new Chart("tempChart", {
@@ -2146,7 +2143,7 @@ __webpack_require__.r(__webpack_exports__);
         },
         options: {
           // responsive: false,
-          cutout: 90
+          cutout: 70
         }
       });
     }, 1000);
@@ -20154,7 +20151,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".chart[data-v-50c22590] {\n  width: 250px;\n  margin-bottom: 30px;\n}\n@media screen and (min-width: 1200px) {\n#plantDataCon[data-v-50c22590] {\n    display: flex;\n    flex-direction: column;\n    justify-content: spa;\n}\n#sensorCharts[data-v-50c22590] {\n    display: flex;\n    flex-direction: row;\n    justify-content: space-around;\n}\n#secondaryDataCon[data-v-50c22590] {\n    display: flex;\n    flex-direction: row;\n    justify-content: space-around;\n    align-items: center;\n}\n}", ""]);
+exports.push([module.i, ".chart[data-v-50c22590] {\n  width: 250px;\n  margin-bottom: 30px;\n  text-align: center;\n}\n.chart h5[data-v-50c22590] {\n  margin-top: 10px;\n}\n@media screen and (min-width: 858px) {\n#sensorCharts[data-v-50c22590] {\n    display: flex;\n    flex-direction: row;\n    justify-content: space-around;\n}\n#secondaryDataCon[data-v-50c22590] {\n    display: flex;\n    flex-direction: row;\n    justify-content: space-around;\n    align-items: center;\n}\n}\n@media screen and (min-width: 1200px) {\n#plantDataCon[data-v-50c22590] {\n    display: flex;\n    flex-direction: column;\n    justify-content: space-around;\n}\n}", ""]);
 
 // exports
 
@@ -52655,12 +52652,61 @@ var render = function () {
     _c("section", { attrs: { id: "plantDataCon" } }, [
       _c("h2", { staticClass: "hidden" }, [_vm._v("Plant Data")]),
       _vm._v(" "),
-      _vm._m(1),
+      _c("div", { attrs: { id: "sensorCharts" } }, [
+        _c("h3", { attrs: { hidden: "" } }, [_vm._v("Live Sensor Display")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "chart" }, [
+          _c("canvas", {
+            staticStyle: { height: "150px", width: "150px" },
+            attrs: { id: "gasChart" },
+          }),
+          _vm._v(" "),
+          _c("h5", [_vm._v(_vm._s(_vm.gas) + " kg")]),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "chart" }, [
+          _c("canvas", {
+            staticStyle: { height: "150px", width: "150px" },
+            attrs: { id: "lightChart" },
+          }),
+          _vm._v(" "),
+          _c("h5", [_vm._v(_vm._s(_vm.light) + " %")]),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "chart" }, [
+          _c("canvas", {
+            staticStyle: { height: "150px", width: "150px" },
+            attrs: { id: "tempChart" },
+          }),
+          _vm._v(" "),
+          _c("h5", [_vm._v(_vm._s(_vm.temperature))]),
+        ]),
+      ]),
       _vm._v(" "),
       _c("div", { attrs: { id: "secondaryDataCon" } }, [
-        _c("div", [_c("HistoryChart")], 1),
+        _c(
+          "div",
+          [
+            _c("h3", { attrs: { hidden: "" } }, [
+              _vm._v("Plant History Chart"),
+            ]),
+            _vm._v(" "),
+            _c("HistoryChart"),
+          ],
+          1
+        ),
         _vm._v(" "),
-        _c("div", [_c("WeatherApi")], 1),
+        _c(
+          "div",
+          [
+            _c("h3", { attrs: { hidden: "" } }, [
+              _vm._v("Open weather Api Display"),
+            ]),
+            _vm._v(" "),
+            _c("WeatherApi"),
+          ],
+          1
+        ),
       ]),
     ]),
     _vm._v(" "),
@@ -52713,33 +52759,6 @@ var staticRenderFns = [
             },
           }),
         ]),
-      ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { attrs: { id: "sensorCharts" } }, [
-      _c("div", { staticClass: "chart" }, [
-        _c("canvas", {
-          staticStyle: { height: "150px", width: "150px" },
-          attrs: { id: "gasChart" },
-        }),
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "chart" }, [
-        _c("canvas", {
-          staticStyle: { height: "150px", width: "150px" },
-          attrs: { id: "lightChart" },
-        }),
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "chart" }, [
-        _c("canvas", {
-          staticStyle: { height: "150px", width: "150px" },
-          attrs: { id: "tempChart" },
-        }),
       ]),
     ])
   },

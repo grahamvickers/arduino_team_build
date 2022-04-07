@@ -12,11 +12,11 @@
     </div> -->
 
     <section id="authCon">
-        <div>
+        <div class="authDiv">
            <h2>Register</h2> 
-           <h3>Create your new account</h3>
+           <h4>Create your new account</h4>
         </div>
-        <div>
+        <div class="authDiv">
             <form method="POST" action="{{ route('register') }}">
                 @csrf
 
@@ -76,7 +76,7 @@
 
                 <div class="formGroup">
                     <div class="formInput">
-                        <button type="submit" class="btn btn-primary">
+                        <button type="submit" class="authBtn">
                             {{ __('Register') }}
                         </button>
                     </div>
