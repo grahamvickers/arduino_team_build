@@ -2,43 +2,40 @@
     <div>
         <section>
             <h2>Banana Plant <span><img src="images/tree.svg" alt="tree" height="40px" padding-left="20px"></span></h2>
-            <!-- <h3>Gas: {{ gas }}</h3>
-            <h3>Moisture: {{ moisture }}</h3>
-            <h3>Temperature: {{ temperature }}</h3>
-            <h3>Light: {{ light }}</h3> -->
         </section>
 
         <section id="plantDataCon">
             <h2 class="hidden">Plant Data</h2>
 
             <div id="sensorCharts">
+                <h3 hidden>Live Sensor Display</h3>
+
                 <div class="chart">
                     <canvas  id="gasChart" style="height:150px; width:150px"></canvas>
+                   <h5>{{ gas }} kg</h5>
                 </div>
                 <div class="chart">
                     <canvas id="lightChart" style="height:150px; width:150px"></canvas>
+                   <h5>{{ light }} %</h5>
                 </div>
                 <div class="chart">
                     <canvas id="tempChart" style="height:150px; width:150px"></canvas>
+                   <h5>{{ temperature }}</h5>
                 </div>
             </div>
 
             <div id="secondaryDataCon">
                 <div>
+                    <h3 hidden>Plant History Chart</h3>
                     <HistoryChart></HistoryChart>
                 </div>
                 <div>
+                    <h3 hidden>Open weather Api Display</h3>
                     <WeatherApi></WeatherApi>
-
                 </div>
-                
             </div>
-            
         </section>
 
-        
-
-        
          <form class="hidden" ref="sensorForm" enctype="multipart/form-data">
             <input type="number" name="gas" id="gas" :value="`${gas}`">
             <input type="number" name="moisture" id="moisture" :value="`${moisture}`">
@@ -129,7 +126,7 @@
                     },
                     options: {
                         // responsive: false,
-                        cutout: 90
+                        cutout: 70
 
                     }
                 });
@@ -144,7 +141,7 @@
                     },
                     options: {
                         // responsive: false,
-                        cutout: 90
+                        cutout: 70
 
                     }
                 });
@@ -159,7 +156,7 @@
                     },
                     options: {
                         // responsive: false,
-                        cutout: 90
+                        cutout: 70
 
                     }
                 });
@@ -238,25 +235,14 @@
         // height: 250px;
         // }
         margin-bottom: 30px;
-    }
-
-    @media screen and (min-width: 760px) {
-        // .chart{
-        //     // width: 300px;
-        // }
-    }
-
-    @media screen and (min-width: 1200px) {
-
-        #plantDataCon{
-            display: flex;
-            flex-direction: column ;
-            justify-content: spa;
+        h5{
+            margin-top: 10px;
         }
-        // .chart{
-        //     he: 200px;
-        // }
+        text-align: center  ;
+        
+    }
 
+    @media screen and (min-width: 858px) {
         #sensorCharts{
             display: flex;
             flex-direction: row;
@@ -269,5 +255,17 @@
             justify-content: space-around;
             align-items: center;
         }
+    }
+
+    @media screen and (min-width: 1200px) {
+
+        #plantDataCon{
+            display: flex;
+            flex-direction: column ;
+            justify-content: space-around;
+        }
+        
+
+        
     }
 </style>
