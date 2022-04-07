@@ -47,7 +47,7 @@ main{
         background-color: #F2F2F2;
         margin-right: 20px;
         list-style: none;
-        height: 95vh;
+        height: 100vh;
         display: flex;
         flex-direction: column;
         justify-content: space-around;

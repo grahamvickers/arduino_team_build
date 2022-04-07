@@ -17,7 +17,7 @@
         </section>
 
         <section>
-            <h2>Weather</h2>
+            <h2 class="hidden">Current Weather</h2>
             <WeatherApi></WeatherApi>
         </section>
     </div>
