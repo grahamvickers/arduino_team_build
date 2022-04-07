@@ -101,8 +101,13 @@ export default {
  }
 
  @media screen and (min-width: 760px) {
-     #historyChart{
-     width: 400px;
+    //  #historyChart{
+    // //  width: 300px;
+    // }
  }
+ @media screen and (min-width: 1200) {
+     #historyChart{
+        width: 200px; 
+    }
  }
 </style>
