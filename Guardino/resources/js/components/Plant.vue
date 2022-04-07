@@ -8,7 +8,9 @@
             <h3>Light: {{ light }}</h3>
         </section>
 
-      
+        <div>
+            <HistoryChart></HistoryChart>
+        </div>
         <canvas id="gasChart" style="height:150px; width:150px"></canvas>
         <canvas id="lightChart" style="height:150px; width:150px"></canvas>
         <canvas id="tempChart" style="height:150px; width:150px"></canvas>
@@ -25,7 +27,7 @@
 </template>
 
 <script>
-    // import HistoryChart from './partials/HistoryChart.vue';
+    import HistoryChart from './partials/HistoryChart.vue';
     
     export default {
         computed: {
@@ -33,9 +35,9 @@
                 return this.$store.state.sensors;
             }
         },
-        // components: {
-        //     HistoryChart
-        // },
+        components: {
+            HistoryChart
+        },
         data() {
             return {
                 gas: null,
