@@ -65,4 +65,11 @@ main{
         }
     }
 }
+
+@media screen and (min-width: 1200px) {
+    main{
+        padding-top: 30px;
+        padding-left: 130px;
+    }   
+}
 </style>
