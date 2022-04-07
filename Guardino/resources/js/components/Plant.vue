@@ -24,6 +24,10 @@
                 </div>
             </div>
 
+            <div class="chart">
+                <canvas id="trendChart" style="height:150px; width:150px"></canvas>
+            </div>
+
             <div id="secondaryDataCon">
                 <div>
                     <h3 hidden>Plant History Chart</h3>
@@ -160,38 +164,51 @@
 
                     }
                 });
-            }, 1000);
-            
 
-            let val = vm.temperature.slice(0,2);
-                let tVal = parseInt(val);
-   
-                let percentG = 100 - vm.gas;
-                let percentL = 100 - vm.light;
-                let percentT = 100 - tVal;
+                let arrLabel = [];
+                let arrMoisture = [];
+                let arrGas = [];
+                let arrLight = [];
+                let arrTemp = [];
+                vm.sensors.forEach(sensor => {
+                    let date = new Date(sensor.created_at);
+                    let finalDate = date.toDateString();
+                    let tempSlice = sensor.temperature.slice(0,2);
+                    let tempNum = parseInt(tempSlice);
 
-            new Chart("lightChart", {
-                type: "doughnut",
+                    arrLabel.push(finalDate);
+                    arrMoisture.push(sensor.moisture);
+                    arrGas.push(sensor.gas);
+                    arrLight.push(sensor.light);
+                    arrTemp.push(tempNum);
+                });
+
+
+                new Chart("trendChart", {
+                type: "line",
                 data: {
-                    labels: ["Light"],
+                    labels: arrLabel,
                     datasets: [{
-                    backgroundColor: ['rgb(96, 166, 95)', 'rgb(235, 235, 235)'],
-                    data: [vm.light, percentL]
+                    borderColor: '#2B3D54',
+                    data: arrMoisture,
+                    label: "Moisture"
+                    }, {
+                        borderColor: '#60A65F',
+                        data: arrTemp,
+                        label: "Tempature"
+                    }, {
+                        borderColor: '#BDD600',
+                        data: arrLight,
+                        label: "Light"
+                    }, {
+                        borderColor: '#5F9EA6',
+                        data: arrGas,
+                        label: "Gas"
                     }]
-                },
-                options: {
-                    responsive: false,
-                    cutout: 90
-
                 }
             });
+            }, 1000);
 
-            // const myChart = new Chart(
-            //     document.getElementById('myChart'),
-            //     config
-            // );
-
-           
         },
         methods: {
             postVal() {
