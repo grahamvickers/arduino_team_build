@@ -8,13 +8,11 @@
             <h3>Light: {{ light }}</h3>
         </section>
 
-        <div>
-            <HistoryChart></HistoryChart>
-        </div>
+      
+        <canvas id="gasChart" style="height:150px; width:150px"></canvas>
+        <canvas id="lightChart" style="height:150px; width:150px"></canvas>
+        <canvas id="tempChart" style="height:150px; width:150px"></canvas>
 
-        <div>
-            <canvas id="myChart"></canvas>
-        </div>
         
          <form class="hidden" ref="sensorForm" enctype="multipart/form-data">
             <input type="number" name="gas" id="gas" :value="`${gas}`">
@@ -27,7 +25,7 @@
 </template>
 
 <script>
-    import HistoryChart from './partials/HistoryChart.vue';
+    // import HistoryChart from './partials/HistoryChart.vue';
     
     export default {
         computed: {
@@ -35,9 +33,9 @@
                 return this.$store.state.sensors;
             }
         },
-        components: {
-            HistoryChart
-        },
+        // components: {
+        //     HistoryChart
+        // },
         data() {
             return {
                 gas: null,
@@ -75,14 +73,69 @@
                 vm.postVal();
             }, 1000);
 
+            // setTimeout(() => {
+            //     vm.sensors.forEach(sensor => {
+            //         console.log(sensor.gas);
+            //         console.log(sensor.moisture);
+            //         console.log(sensor.temperature);
+            //         console.log(sensor.light);
+            //     });  
+            // }, 1000); 
+            
             setTimeout(() => {
-                vm.sensors.forEach(sensor => {
-                    console.log(sensor.gas);
-                    console.log(sensor.moisture);
-                    console.log(sensor.temperature);
-                    console.log(sensor.light);
-                });  
-            }, 1000);       
+    
+                let val = vm.temperature.slice(0,2);
+                let tVal = parseInt(val);
+   
+                let percentG = 100 - vm.gas;
+                let percentL = 100 - vm.light;
+                let percentT = 100 - tVal;
+                new Chart("gasChart", {
+                    type: "doughnut",
+                    data: {
+                        labels: ["Gas"],
+                        datasets: [{
+                        backgroundColor: ['rgb(96, 166, 95)', 'rgb(235, 235, 235)'],
+                        data: [vm.gas, percentG]
+                        }]
+                    },
+                    options: {
+                        // responsive: false,
+                        cutout: 90
+
+                    }
+                });
+                new Chart("lightChart", {
+                    type: "doughnut",
+                    data: {
+                        labels: ["Light"],
+                        datasets: [{
+                        backgroundColor: ['rgb(96, 166, 95)', 'rgb(235, 235, 235)'],
+                        data: [vm.light, percentL]
+                        }]
+                    },
+                    options: {
+                        // responsive: false,
+                        cutout: 90
+
+                    }
+                });
+                new Chart("tempChart", {
+                    type: "doughnut",
+                    data: {
+                        labels: ["Tempature"],
+                        datasets: [{
+                        backgroundColor: ['rgb(96, 166, 95)', 'rgb(235, 235, 235)'],
+                        data: [tVal, percentT]
+                        }]
+                    },
+                    options: {
+                        // responsive: false,
+                        cutout: 90
+
+                    }
+                });
+            }, 1000);
             
 
             let val = vm.temperature.slice(0,2);
