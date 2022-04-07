@@ -73,14 +73,15 @@ main{
     #mainCon{
         display: flex;
         ul{ 
-            z-index: -1;
+            // z-index: -1;
             width: 80px;
+            bottom: 0;
             position: fixed;
             padding: 20px !important;
             background-color: #F2F2F2;
             margin-right: 20px;
             list-style: none;
-            height: 100vh;
+            height: 93vh;
             display: flex;
             flex-direction: column;
             justify-content: space-around;

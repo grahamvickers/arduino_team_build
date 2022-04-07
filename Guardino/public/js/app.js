@@ -2045,6 +2045,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2146,29 +2151,46 @@ __webpack_require__.r(__webpack_exports__);
           cutout: 70
         }
       });
+      var arrLabel = [];
+      var arrMoisture = [];
+      var arrGas = [];
+      var arrLight = [];
+      var arrTemp = [];
+      vm.sensors.forEach(function (sensor) {
+        var date = new Date(sensor.created_at);
+        var finalDate = date.toDateString();
+        var tempSlice = sensor.temperature.slice(0, 2);
+        var tempNum = parseInt(tempSlice);
+        arrLabel.push(finalDate);
+        arrMoisture.push(sensor.moisture);
+        arrGas.push(sensor.gas);
+        arrLight.push(sensor.light);
+        arrTemp.push(tempNum);
+      });
+      new Chart("trendChart", {
+        type: "line",
+        data: {
+          labels: arrLabel,
+          datasets: [{
+            borderColor: '#2B3D54',
+            data: arrMoisture,
+            label: "Moisture"
+          }, {
+            borderColor: '#60A65F',
+            data: arrTemp,
+            label: "Tempature"
+          }, {
+            borderColor: '#BDD600',
+            data: arrLight,
+            label: "Light"
+          }, {
+            borderColor: '#5F9EA6',
+            data: arrGas,
+            label: "Gas"
+          }]
+        }
+      });
     }, 1000);
-    var val = vm.temperature.slice(0, 2);
-    var tVal = parseInt(val);
-    var percentG = 100 - vm.gas;
-    var percentL = 100 - vm.light;
-    var percentT = 100 - tVal;
-    new Chart("lightChart", {
-      type: "doughnut",
-      data: {
-        labels: ["Light"],
-        datasets: [{
-          backgroundColor: ['rgb(96, 166, 95)', 'rgb(235, 235, 235)'],
-          data: [vm.light, percentL]
-        }]
-      },
-      options: {
-        responsive: false,
-        cutout: 90
-      }
-    }); // const myChart = new Chart(
-    //     document.getElementById('myChart'),
-    //     config
-    // );
   },
   methods: {
     postVal: function postVal() {
@@ -20115,7 +20137,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "main[data-v-332fccf4] {\n  padding: 30px 40px;\n}\n#mainCon[data-v-332fccf4] {\n  display: flex;\n}\n#mainCon ul[data-v-332fccf4] {\n  position: fixed;\n  bottom: 0;\n  padding: 20px !important;\n  background-color: #F2F2F2;\n  margin-right: 20px;\n  list-style: none;\n  width: 100vw;\n  display: flex;\n  flex-direction: row;\n  justify-content: space-around;\n}\n#mainCon ul li[data-v-332fccf4] {\n  display: flex;\n  justify-content: space-around;\n}\n#mainCon ul li img[data-v-332fccf4] {\n  width: 30px;\n}\n#mainCon ul li img[data-v-332fccf4]:hover {\n  cursor: pointer;\n  opacity: 0.8;\n}\n@media screen and (min-width: 858px) {\nmain[data-v-332fccf4] {\n    padding-top: 30px;\n    padding-left: 130px;\n}\n#mainCon[data-v-332fccf4] {\n    display: flex;\n}\n#mainCon ul[data-v-332fccf4] {\n    z-index: -1;\n    width: 80px;\n    position: fixed;\n    padding: 20px !important;\n    background-color: #F2F2F2;\n    margin-right: 20px;\n    list-style: none;\n    height: 100vh;\n    display: flex;\n    flex-direction: column;\n    justify-content: space-around;\n}\n#mainCon ul li[data-v-332fccf4] {\n    display: flex;\n    justify-content: space-around;\n}\n#mainCon ul li img[data-v-332fccf4] {\n    width: 30px;\n}\n#mainCon ul li img[data-v-332fccf4]:hover {\n    cursor: pointer;\n    opacity: 0.8;\n}\n}\n@media screen and (min-width: 858px) and (min-width: 1200px) {\nmain[data-v-332fccf4] {\n    padding-top: 30px;\n    padding-left: 130px;\n}\n}", ""]);
+exports.push([module.i, "main[data-v-332fccf4] {\n  padding: 30px 40px;\n}\n#mainCon[data-v-332fccf4] {\n  display: flex;\n}\n#mainCon ul[data-v-332fccf4] {\n  position: fixed;\n  bottom: 0;\n  padding: 20px !important;\n  background-color: #F2F2F2;\n  margin-right: 20px;\n  list-style: none;\n  width: 100vw;\n  display: flex;\n  flex-direction: row;\n  justify-content: space-around;\n}\n#mainCon ul li[data-v-332fccf4] {\n  display: flex;\n  justify-content: space-around;\n}\n#mainCon ul li img[data-v-332fccf4] {\n  width: 30px;\n}\n#mainCon ul li img[data-v-332fccf4]:hover {\n  cursor: pointer;\n  opacity: 0.8;\n}\n@media screen and (min-width: 858px) {\nmain[data-v-332fccf4] {\n    padding-top: 30px;\n    padding-left: 130px;\n}\n#mainCon[data-v-332fccf4] {\n    display: flex;\n}\n#mainCon ul[data-v-332fccf4] {\n    width: 80px;\n    bottom: 0;\n    position: fixed;\n    padding: 20px !important;\n    background-color: #F2F2F2;\n    margin-right: 20px;\n    list-style: none;\n    height: 93vh;\n    display: flex;\n    flex-direction: column;\n    justify-content: space-around;\n}\n#mainCon ul li[data-v-332fccf4] {\n    display: flex;\n    justify-content: space-around;\n}\n#mainCon ul li img[data-v-332fccf4] {\n    width: 30px;\n}\n#mainCon ul li img[data-v-332fccf4]:hover {\n    cursor: pointer;\n    opacity: 0.8;\n}\n}\n@media screen and (min-width: 858px) and (min-width: 1200px) {\nmain[data-v-332fccf4] {\n    padding-top: 30px;\n    padding-left: 130px;\n}\n}", ""]);
 
 // exports
 
@@ -52686,17 +52708,7 @@ var render = function () {
       ]),
       _vm._v(" "),
       _c("div", { attrs: { id: "secondaryDataCon" } }, [
-        _c(
-          "div",
-          [
-            _c("h3", { attrs: { hidden: "" } }, [
-              _vm._v("Plant History Chart"),
-            ]),
-            _vm._v(" "),
-            _c("HistoryChart"),
-          ],
-          1
-        ),
+        _vm._m(1),
         _vm._v(" "),
         _c(
           "div",
@@ -52761,6 +52773,21 @@ var staticRenderFns = [
             },
           }),
         ]),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c("h3", { attrs: { hidden: "" } }, [_vm._v("Plant History Chart")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "chart" }, [
+        _c("canvas", {
+          staticStyle: { height: "150px", width: "150px" },
+          attrs: { id: "trendChart" },
+        }),
       ]),
     ])
   },

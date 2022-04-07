@@ -24,14 +24,15 @@
                 </div>
             </div>
 
-            <div class="chart">
-                <canvas id="trendChart" style="height:150px; width:150px"></canvas>
-            </div>
+            
 
             <div id="secondaryDataCon">
                 <div>
                     <h3 hidden>Plant History Chart</h3>
-                    <HistoryChart></HistoryChart>
+                    <!-- <HistoryChart></HistoryChart> -->
+                    <div class="chart">
+                        <canvas id="trendChart" style="height:150px; width:150px"></canvas>
+                    </div>
                 </div>
                 <div>
                     <h3 hidden>Open weather Api Display</h3>
