@@ -36,20 +36,20 @@
 
 <style lang="scss" scoped>
 main{
-    padding-top: 20px;
-    padding-left: 90px;
+    padding: 30px 40px;
 }
 #mainCon{
     display: flex;
     ul{ 
         position: fixed;
+        bottom: 0;
         padding: 20px !important;
         background-color: #F2F2F2;
         margin-right: 20px;
         list-style: none;
-        height: 100vh;
+        width: 100vw;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         justify-content: space-around;
         li{
             display: flex;
@@ -65,11 +65,45 @@ main{
         }
     }
 }
+@media screen and (min-width: 858px){
+    main{
+        padding-top: 30px;
+        padding-left: 130px;
+    } 
+    #mainCon{
+        display: flex;
+        ul{ 
+            z-index: -1;
+            width: 80px;
+            position: fixed;
+            padding: 20px !important;
+            background-color: #F2F2F2;
+            margin-right: 20px;
+            list-style: none;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            li{
+                display: flex;
+                justify-content: space-around;
+                img{
+                    width: 30px;
+                    &:hover{
+                        cursor: pointer;
+                        opacity: .8;
+                    }
+                }
+            }
+        }
+    }
 
 @media screen and (min-width: 1200px) {
     main{
         padding-top: 30px;
         padding-left: 130px;
     }   
+    
+}
 }
 </style>
