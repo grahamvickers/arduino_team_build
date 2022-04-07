@@ -10983,6 +10983,16 @@ h3 {
   margin-bottom: 10px;
 }
 
+h4 {
+  font-family: hwt-artz, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 32px;
+  color: #2B3D54;
+  margin-bottom: 20px;
+  letter-spacing: 3 !important;
+}
+
 p {
   font-family: objektiv-mk3, sans-serif;
   font-weight: 400;

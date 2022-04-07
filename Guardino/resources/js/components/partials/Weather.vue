@@ -1,10 +1,23 @@
 <template>
     <div>
-        <h2>{{ weather.name }}</h2>
-        <p>{{ currentDate() }}</p>
-        <h2>{{ Math.round(weather.main.temp) }}&deg;C</h2>
-        <h5>{{weather.weather[0].description}}</h5>
-        <img v-bind:src="`https://api.openweathermap.org/img/w/${weather.weather[0].icon}.png`" alt="weather icon">
+        <div id="nameDate">
+            <h2>{{ weather.name }}, {{ weather.sys.country}}</h2>
+            <p>{{ currentDate() }}</p>  
+        </div>
+        
+        <div id="currentWeather">
+            <h4>{{ Math.round(weather.main.temp) }}&deg;C</h4>
+
+            <div>
+                <p>{{weather.weather[0].description}}</p>
+                <img v-bind:src="`https://api.openweathermap.org/img/w/${weather.weather[0].icon}.png`" alt="weather icon">
+            </div>
+        </div>
+
+        <div>
+            <p>Low {{ Math.round(weather.main.temp_min) }}&deg;C &#8693; High {{ Math.round(weather.main.temp_max) }}&deg;C</p>
+        </div>
+        
     </div>
 </template>
 
@@ -34,3 +47,27 @@ export default {
     },
 }
 </script>
+
+<style lang="scss" scoped>
+ #currentWeather{
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+     margin-bottom: 20px;
+    h4{
+        margin-right: 30px;
+    }
+    p{
+        margin-bottom: 5px !important;
+    }
+ }
+
+ #nameDate{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    h2{
+        margin-right: 30px;
+    }
+ }
+</style>
