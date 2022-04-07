@@ -39,6 +39,10 @@ now, this command to populate the database
 ```
 $ docker-compose run artisan migrate
 ```
+now, this command to populate any missing pieces of the build
+```
+$ docker-compose run npm run dev
+```
 now the run final command below to deploy the application
 ```
 $ docker-compose up
