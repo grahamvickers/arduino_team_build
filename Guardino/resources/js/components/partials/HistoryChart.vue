@@ -1,5 +1,5 @@
 <template>
-  <Doughnut
+  <Doughnut id="historyChart"
     :chart-options="chartOptions"
     :chart-data="chartData"
     :chart-id="chartId"
@@ -72,7 +72,7 @@ export default {
             labels: ['Moisture', 'Temperature', 'Light', 'Gas'],
             datasets: [
             {
-                backgroundColor: ['#41B883', '#E46651', '#00D8FF', '#DD1B16'],
+                backgroundColor: ['#2B3D54', '#60A65F', '#BDD600', '#5F9EA6'],
                 data: [60, 20, 80, 10]
             }
             ]
@@ -83,18 +83,26 @@ export default {
         }
         }
     },
-    // mounted: {
-    //     let vm = this;
-
-    //     setTimeout(() => {
-    //         vm.sensors.forEach(sensor => {
-    //             console.log(sensor.gas);
-    //             console.log(sensor.moisture);
-    //             console.log(sensor.temperature);
-    //             console.log(sensor.light);
-    //         });  
-    //     }, 1000); 
+    // mounted() {
+    //    let val = vm.temperature.slice(0,2);
+    //             let tVal = parseInt(val);
+   
+    //             let percentG = 100 - vm.gas;
+    //             let percentL = 100 - vm.light;
+    //             let percentT = 100 - tVal;
     // }
 
 }
 </script>
+
+<style lang="scss" scoped>
+ #historyChart{
+     width: 200px;
+ }
+
+ @media screen and (min-width: 760px) {
+     #historyChart{
+     width: 400px;
+ }
+ }
+</style>

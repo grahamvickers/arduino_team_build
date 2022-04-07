@@ -8,12 +8,11 @@
             <h3>Light: {{ light }}</h3>
         </section>
 
-        <!-- <div>
-            <HistoryChart></HistoryChart>
-        </div> -->
+      
         <canvas id="gasChart" style="height:150px; width:150px"></canvas>
         <canvas id="lightChart" style="height:150px; width:150px"></canvas>
         <canvas id="tempChart" style="height:150px; width:150px"></canvas>
+
         
          <form class="hidden" ref="sensorForm" enctype="multipart/form-data">
             <input type="number" name="gas" id="gas" :value="`${gas}`">
@@ -138,6 +137,34 @@
                 });
             }, 1000);
             
+
+            let val = vm.temperature.slice(0,2);
+                let tVal = parseInt(val);
+   
+                let percentG = 100 - vm.gas;
+                let percentL = 100 - vm.light;
+                let percentT = 100 - tVal;
+
+            new Chart("lightChart", {
+                type: "doughnut",
+                data: {
+                    labels: ["Light"],
+                    datasets: [{
+                    backgroundColor: ['rgb(96, 166, 95)', 'rgb(235, 235, 235)'],
+                    data: [vm.light, percentL]
+                    }]
+                },
+                options: {
+                    responsive: false,
+                    cutout: 90
+
+                }
+            });
+
+            const myChart = new Chart(
+                document.getElementById('myChart'),
+                config
+            );
         },
         methods: {
             postVal() {
