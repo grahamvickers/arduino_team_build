@@ -57,10 +57,10 @@ $ docker-compose up
 
 ## Browser Capability 
 
-* Chrome - 
-* Firefox - 
-* Safari -
-* IE - 
+* Chrome - 100%
+* Firefox - 100%
+* Safari - 100%
+
 
 
 ## Authors
