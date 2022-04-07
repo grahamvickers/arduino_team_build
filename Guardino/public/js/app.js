@@ -2178,7 +2178,22 @@ __webpack_require__.r(__webpack_exports__);
       axios.post("/api/sensor", formS).then(function (response) {
         console.log(response.status);
       });
-    }
+    } // sendSms() {
+    //     // sms function below 
+    //     const client = require('twilio')('ACe0066d7fe8e4e129d320d77a991d0237', '5170db6740df41b9b1d4ae6c57fbbd9d');
+    //     if (vm.moisture >= 85) {
+    //         client.messages
+    //         .create({
+    //             body: 'Flora.io plant alert!',
+    //             // twillo sending number
+    //             from: '+15078794673',
+    //             // user number
+    //             to: '+12269270901'
+    //         }).then(message => console.log(message))
+    //         .catch(error => console.log(error))
+    //     }
+    // }
+
   }
 });
 
@@ -2256,26 +2271,34 @@ chart_js__WEBPACK_IMPORTED_MODULE_1__["Chart"].register(chart_js__WEBPACK_IMPORT
   },
   data: function data() {
     return {
-      chartData: {
-        labels: ['Moisture', 'Temperature', 'Light', 'Gas'],
-        datasets: [{
-          backgroundColor: ['#2B3D54', '#60A65F', '#BDD600', '#5F9EA6'],
-          data: [60, 20, 80, 10]
-        }]
-      },
+      sData: [],
+      chartData: null,
       chartOptions: {
         responsive: true,
         maintainAspectRatio: false
       }
     };
-  } // mounted() {
-  //    let val = vm.temperature.slice(0,2);
-  //             let tVal = parseInt(val);
-  //             let percentG = 100 - vm.gas;
-  //             let percentL = 100 - vm.light;
-  //             let percentT = 100 - tVal;
-  // }
-
+  },
+  mounted: function mounted() {
+    var vm = this;
+    setTimeout(function () {
+      var sLength = vm.sensors.length;
+      var sLast = vm.sensors[sLength - 1];
+      var val = sLast.temperature.slice(0, 2);
+      var tVal = parseInt(val);
+      vm.sData.push(sLast.gas);
+      vm.sData.push(sLast.light);
+      vm.sData.push(sLast.moisture);
+      vm.sData.push(tVal);
+      vm.chartData = {
+        labels: ['Moisture', 'Temperature', 'Light', 'Gas'],
+        datasets: [{
+          backgroundColor: ['#2B3D54', '#60A65F', '#BDD600', '#5F9EA6'],
+          data: vm.sData
+        }]
+      };
+    }, 1000);
+  }
 });
 
 /***/ }),
