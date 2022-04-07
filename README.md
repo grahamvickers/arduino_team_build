@@ -65,7 +65,7 @@ $ docker-compose up
 
 ## Authors
 
-* **Graham Vickers** - *Project Manager & Full-Stack Developer* - [Fanshawe College](https://github.com/grahamvickers)
+* **Graham Vickers** - *Project Manager & Lead Front-End Developer* - [Fanshawe College](https://github.com/grahamvickers)
 * **Zacharie Pereira** - *Lead Back-End Developer* - [Fanshawe College](https://github.com/zpereiracollege)
 * **Arafat Ahmad** - *Assistant Front-End Developer* - [Fanshawe College](https://github.com/zpereiracollege)
  
