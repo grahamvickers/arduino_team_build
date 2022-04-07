@@ -68,29 +68,43 @@ export default {
     },
     data() {
         return {
-        chartData: {
-            labels: ['Moisture', 'Temperature', 'Light', 'Gas'],
-            datasets: [
-            {
-                backgroundColor: ['#2B3D54', '#60A65F', '#BDD600', '#5F9EA6'],
-                data: [60, 20, 80, 10]
-            }
-            ]
-        },
+        sData: [],
+        chartData: null,
         chartOptions: {
             responsive: true,
             maintainAspectRatio: false
         }
         }
     },
-    // mounted() {
-    //    let val = vm.temperature.slice(0,2);
-    //             let tVal = parseInt(val);
-   
-    //             let percentG = 100 - vm.gas;
-    //             let percentL = 100 - vm.light;
-    //             let percentT = 100 - tVal;
-    // }
+    mounted() {
+        let vm = this;
+
+        setTimeout(() => {
+        
+            let sLength = vm.sensors.length;
+            let sLast = vm.sensors[sLength-1];
+            let val = sLast.temperature.slice(0,2);
+            let tVal = parseInt(val);
+
+            vm.sData.push(sLast.gas);
+            vm.sData.push(sLast.light);
+            vm.sData.push(sLast.moisture);
+            vm.sData.push(tVal);
+
+            vm.chartData = {
+                labels: ['Moisture', 'Temperature', 'Light', 'Gas'],
+                datasets: [
+                {
+                    backgroundColor: ['#2B3D54', '#60A65F', '#BDD600', '#5F9EA6'],
+                    data: vm.sData
+                }
+                ]
+            }
+
+        }, 1000);
+                
+                
+    }
 
 }
 </script>
